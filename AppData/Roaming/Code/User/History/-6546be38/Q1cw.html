@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="output"></div>
+    <script>
+      const output = document.querySelector(".output ");
+      output.textContent = "HelloWorld";
+      output.textContent = "hello world";
+      output.style.height = "200px";
+      output.style.width = "400px";
+      output.style.backgroundColor = "red";
+      output.addEventListener("mousedown", function (e) {
+        messege("green", e);
+      });
+
+      output.addEventListener("mouseover", function (e) {
+        messege("blue", e);
+      });
+
+      output.addEventListener("mouseout", function (e) {
+        message("yellow", e);
+      });
+
+      output.addEventListeners("mouseup", function (e) {
+        message("purple", e);
+      });
+
+      function message(elColor, event) {
+        console.log(event.type);
+        output.style.backgroundColor = elColor;
+      }
+    </script>
+  </body>
+</html>
